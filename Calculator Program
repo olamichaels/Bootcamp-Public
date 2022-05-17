@@ -22,10 +22,23 @@ operations = {
 num1 = int(input("What's the first number?: "))
 for symbol in operations:
   print(symbol)
+  
+#Here we select "+"
+  
 operation_symbol = input("Pick an operation from the line above: ")
 num2 = int(input("What's the second number?: "))
 calculation_function = operations[operation_symbol]
-answer = calculation_function(num1, num2)
+first_answer = calculation_function(num1, num2)
+print(f"{num1} {operation_symbol} {num2} = {first_answer}")
 
-print(f"{num1} {operation_symbol} {num2} = {answer}")
+#At this stage we select "*" which overides the "+"
+
+operation_symbol = input("Pick an operation from the line above: ")
+num3 = input("What is the third number? ")
+
+#Here the calculation_function will be multiply() function
+calculation_function = operations[operation_symbol]
+#The second_answer is below
+second_answer = calculation_function(first_answer, num3)
+print(f"{first_answer} {operation_symbol} {num3} = {second_answer}")
 
